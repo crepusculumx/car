@@ -31,15 +31,8 @@ void MyCarDrive::gamepad_callback(const sensor_msgs::JoyConstPtr &joy) {
 }
 
 int main(int argc, char **argv) {
-    ros::init(argc, argv, "my_car");
+    ros::init(argc, argv, "my_car_drive");
     MyCarDrive my_car_drive;
-
-    ros::Rate loop_rate(125);
-
-    while (ros::ok()) {
-        my_car_drive.control_loop();
-        ros::spinOnce();
-        loop_rate.sleep();
-    }
+    ros::spin();
     return 0;
 }
