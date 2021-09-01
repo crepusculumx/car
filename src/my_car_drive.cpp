@@ -18,7 +18,6 @@ bool MyCarDrive::init() {
     joy_sub = nh.subscribe("/joy", 50, &MyCarDrive::gamepad_callback, this);
     return true;
 }
-
 bool MyCarDrive::control_loop() {
     return true;
 }

@@ -75,22 +75,3 @@ target_link_libraries(my_car_drive ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
 add_executable(arduino_drive src/arduino_drive.cpp)
 add_dependencies(arduino_drive ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(arduino_drive ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
-
-################################################################################
-# Install
-################################################################################
-install(TARGETS my_car_drive
-        RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-        )
-
-install(DIRECTORY include/${PROJECT_NAME}/
-        DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
-        )
-
-install(DIRECTORY launch models rviz worlds
-        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-        )
-
-################################################################################
-# Test
-################################################################################
